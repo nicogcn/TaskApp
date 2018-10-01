@@ -3,12 +3,8 @@ var express = require('express'),
   app = express(),
   port = process.env.PORT || 3000;
 //Routes
-//var persons = require("./routes");
-//app.use('/persons', persons);
-
-app.get('/', function (req, res) {
-  res.send('Hello World!');
-});
+var tasksRoutes = require("./routes/taskRoutes");
+app.use('/tasks', tasksRoutes);
 
 app.listen(port);
 
